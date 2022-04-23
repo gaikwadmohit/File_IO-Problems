@@ -9,9 +9,9 @@ package com.Bridgelabz.Day27;
 	import java.util.List;
 
 	public class Employee_PayrollFile_IO_Service {
-	    public static final String PAYROLL_FILE_NAME = "employee-payroll-file.txt";
+		public static final String PAYROLL_FILE_NAME = "employee-payroll-file.txt";
 
-	    public void writeData(List<Employee_Payroll_Data> employeeList) {
+	    public <EmployeePayrollData> void writeData(List<EmployeePayrollData> employeeList) {
 
 	        StringBuffer employeeBufferString = new StringBuffer();
 	        employeeList.forEach(employee -> {
@@ -33,5 +33,12 @@ package com.Bridgelabz.Day27;
 	        } catch (IOException e) {
 	        }
 	        return countOfEntries;
+	    }
+
+	    public void printEmployeePayrolls() {
+	        try {
+	            Files.lines(Paths.get(PAYROLL_FILE_NAME)).forEach(System.out::println);
+	        } catch (IOException e) {
+	        }
 	    }
 	}

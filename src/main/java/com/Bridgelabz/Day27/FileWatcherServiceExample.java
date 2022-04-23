@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FileWatcherServiceExample {
-    private static String HOME = System.getProperty("user.home");
+	private static String HOME = System.getProperty("user.home");
     private static String PLAY_WITH_NIO = "TempPlayGround";
 
     public void givenADirectoryWhenCheckListAllTheActivities() throws IOException {
